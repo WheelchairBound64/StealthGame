@@ -1,28 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class JeffMovement : MonoBehaviour
 {
-    Rigidbody rb;
+    private Rigidbody rb;
+    private Vector2 moveInput;
     [SerializeField] float speed;
-    Vector2 moveInput;
+
+    IA_PlayerMovement playerMovement;
     // Start is called before the first frame update
     void Start()
     {
+        playerMovement = new IA_PlayerMovement();
+        playerMovement.Player.Enable();
         rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        moveInput = playerMovement.Player.Move.ReadValue<Vector2>();
     }
 
     private void FixedUpdate()
     {
         var newInput = GetCameraBasedInput(moveInput, Camera.main);     //uses the camera position to adjust movement keys
-        moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        rb.velocity = new Vector3(newInput.x * speed * Time.deltaTime, rb.velocity.y, newInput.y * speed * Time.deltaTime);
+        var newVelocity = new Vector3(newInput.x * speed * Time.fixedDeltaTime, rb.velocity.y, newInput.z * speed * Time.fixedDeltaTime);
+
+        rb.velocity = newVelocity;
     }
 
     Vector3 GetCameraBasedInput(Vector2 input, Camera cam)          //camera based movement
