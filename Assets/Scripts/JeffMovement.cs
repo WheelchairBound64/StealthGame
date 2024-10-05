@@ -27,7 +27,7 @@ public class JeffMovement : MonoBehaviour
     private void FixedUpdate()
     {
         var newInput = GetCameraBasedInput(moveInput, Camera.main);     //uses the camera position to adjust movement keys
-        var newVelocity = new Vector3(newInput.x * speed * Time.fixedDeltaTime, rb.velocity.y, newInput.z * speed * Time.fixedDeltaTime);
+        var newVelocity = new Vector3(newInput.x * speed, rb.velocity.y, newInput.z * speed);
 
         rb.velocity = newVelocity;
     }
@@ -38,10 +38,10 @@ public class JeffMovement : MonoBehaviour
         camRight.y = 0;
         camRight.Normalize();
 
-        Vector3 camForward = cam.transform.forward;
-        camForward.y = 0;
-        camForward.Normalize();
+        Vector3 camUp = cam.transform.up;
+        camUp.y = 0;
+        camUp.Normalize();
 
-        return input.x * camRight + input.y * camForward;
+        return input.x * camRight + input.y * camUp;
     }
 }
