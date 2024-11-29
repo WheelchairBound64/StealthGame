@@ -292,8 +292,8 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
-  m_UseGeometry: 0
+    m_Bits: 127
+  m_UseGeometry: 1
   m_DefaultArea: 0
   m_GenerateLinks: 0
   m_IgnoreNavMeshAgent: 1
@@ -2133,7 +2133,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 385646568958988302, guid: e9e742c9c63d8154cae43abdc3540f92, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.13
+      value: 16.26
       objectReference: {fileID: 0}
     - target: {fileID: 385646568958988302, guid: e9e742c9c63d8154cae43abdc3540f92, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2141,7 +2141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 385646568958988302, guid: e9e742c9c63d8154cae43abdc3540f92, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.25
+      value: -5.59
       objectReference: {fileID: 0}
     - target: {fileID: 385646568958988302, guid: e9e742c9c63d8154cae43abdc3540f92, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2189,9 +2189,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 788052613686864617, guid: 207acba55f05b3e428d618762755d691, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 788052613686864617, guid: 207acba55f05b3e428d618762755d691, type: 3}
       propertyPath: losPlayer
       value: 
       objectReference: {fileID: 588660766}
+    - target: {fileID: 788052613686864617, guid: 207acba55f05b3e428d618762755d691, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 788052613686864617, guid: 207acba55f05b3e428d618762755d691, type: 3}
       propertyPath: moveTarget
       value: 
@@ -2200,13 +2208,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: EvilJeff
       objectReference: {fileID: 0}
+    - target: {fileID: 4361308295044647424, guid: 207acba55f05b3e428d618762755d691, type: 3}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4361308295044647424, guid: 207acba55f05b3e428d618762755d691, type: 3}
+      propertyPath: m_AutoRepath
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8721379623276755401, guid: 207acba55f05b3e428d618762755d691, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.13
       objectReference: {fileID: 0}
     - target: {fileID: 8721379623276755401, guid: 207acba55f05b3e428d618762755d691, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 8721379623276755401, guid: 207acba55f05b3e428d618762755d691, type: 3}
       propertyPath: m_LocalPosition.z
